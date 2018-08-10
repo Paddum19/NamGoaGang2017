@@ -5,28 +5,33 @@
 <title>Guru Registration Form</title>
 </head>
 <body>
-<h1>Find Amount Per Head</h1>
- <script type="text/javascript">
-   function add() {
-     var element = document.createElement("input");
-     element.setAttribute("type", "text");
-     element.setAttribute("name", "mytext");
-    var spanvar = document.getElementById("myspan");
-    spanvar .appendChild(element);
-   }
-</SCRIPT>
-<div id="certificationtog">
-   <p class="setting">
-      <input type="button" id="addrows" name="addrows" class="addperson" 
-        value="Add Rows" onclick="add();">
-      <input type="button" id="removerows" class="removerows" 
-        value="Delete Rows" />  
-      <span id="myspan"></span>
-      <br><br>
-      <span style="width: 0px; margin-left: 20px; font-weight: bold; float: none;">
-        Diploma/Certificate:
-      </span>
-   </p>
-</div>
+<h1>Guru Register Form</h1>
+<form action="guru_register" method="post">
+			<table style="with: 50%">
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" name="first_name" /></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" name="last_name" /></td>
+				</tr>
+				<tr>
+					<td>UserName</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+					<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td>Address</td>
+					<td><input type="text" name="address" /></td>
+				</tr>
+				<tr>
+					<td>Contact No</td>
+					<td><input type="text" name="contact" /></td>
+				</tr></table>
+			<input type="submit" value="Submit" /></form>
 </body>
 </html>
