@@ -1,11 +1,13 @@
 var name = "";
 var x;
 function haveMore(tag) {
+	x=document.getElementById("form");
 	if (tag ==2) {
+		
 		if (name == "") {
-			name = name + document.getElementById("field4").val();
+			name = name + x.elements[0].value ;
 		} else {
-			name = name + "_" +document.getElementById("field4").val();
+			name = name + "_" +x.elements[0].value ;
 		}
 		alert(name);
 	}
