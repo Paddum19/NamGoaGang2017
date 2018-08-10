@@ -3,9 +3,9 @@ var x;
 function haveMore(tag) {
 	if (tag ==2) {
 		if (name == "") {
-			name = name + document.getElementById("Name").val();
+			name = name + document.getElementById("field4").val();
 		} else {
-			name = name + "_" +document.getElementById("Name").val();
+			name = name + "_" +document.getElementById("field4").val();
 		}
 		alert(name);
 	}
