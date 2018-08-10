@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1>Find Amount Per Head</h1>
-
+  <div>Name:- <input type="text"></div>
 </body>
 </html>
