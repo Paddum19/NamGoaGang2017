@@ -51,12 +51,12 @@ $(document).ready(function(){
 	$('#finalSubmit').on( "click", function() {
 		addingToMap();
 		perHeadAmount=Object.keys(nameAmountMap).length;
-		perHeadAmount=(totalAmount/perHeadAmount)
+		perHeadAmount=Math.round(parseFloat(totalAmount/perHeadAmount));
 		for (var i in nameAmountMap) {
-			if(parseInt(nameAmountMap[i])>perHeadAmount){
-				finalAmountHtml=finalAmountHtml+"<font color=\"green\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" shoukd get back Rs "+(nameAmountMap[i]-perHeadAmount)+"!!</strong></font><br>";
-			}else if(parseInt(nameAmountMap[i])<perHeadAmount){
-				finalAmountHtml=finalAmountHtml+"<font color=\"red\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" shoukd pay Rs "+(perHeadAmount-nameAmountMap[i])+" more!!</strong></font><br>";
+			if(Math.round(parseFloat(nameAmountMap[i]))>perHeadAmount){
+				finalAmountHtml=finalAmountHtml+"<font color=\"green\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" should get back Rs "+(nameAmountMap[i]-perHeadAmount)+"!!</strong></font><br>";
+			}else if(Math.round(parseFloat(nameAmountMap[i]))<perHeadAmount){
+				finalAmountHtml=finalAmountHtml+"<font color=\"red\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" should pay Rs "+(perHeadAmount-nameAmountMap[i])+" more!!</strong></font><br>";
 			}else{
 				finalAmountHtml=finalAmountHtml+"<font color=\"yellow\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" have paid full amount!!</strong></font><br>";
 			}
@@ -71,15 +71,15 @@ $(document).ready(function(){
 		if (nameAmountMap[x.elements[0].value] === undefined) {
 			nameAmountMap[x.elements[0].value]=x.elements[1].value;
 		}else{
-			nameAmountMap[x.elements[0].value]=(parseInt(nameAmountMap[x.elements[0].value], 10)+parseInt(x.elements[1].value, 10))+"";
+			nameAmountMap[x.elements[0].value]=Math.round(parseFloat(nameAmountMap[x.elements[0].value], 10)+parseFloat(x.elements[1].value, 10))+"";
 		}
-		totalAmount=totalAmount+(parseInt(x.elements[1].value));
+		totalAmount=totalAmount+Math.round(parseFloat(x.elements[1].value));
 		showDetails(x.elements[0].value,x.elements[1].value,x.elements[2].value);
 		count++;
 	}
 
 	function showDetails(name,amount,reason){
-		html2="<h3>"+name+"  :: Rs "+amount+"::"+reason+"</h3>";
+		html2="<h3>Name: "+name+"             Amount : Rs "+Math.round(parseFloat(amount))+":       Reason :"+reason+"</h3>";
 		$('#amountList').append(html2);
 	}
 });
