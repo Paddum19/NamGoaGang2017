@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style type="text/css">
 .form-style-1 {
 	margin: 10px auto;
@@ -102,39 +103,62 @@
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 }
+
+h3 {
+	padding: 0px;
+	margin: 0px;
+}
 </style>
 <script type="text/javascript" src="myscripts.js"></script>
 </head>
 <body>
-	<h1>Group Amount Calculator</h1>
-	<div id="outerDiv">
-		<div id="formDiv_1">
-			<form id="form_1">
-				<ul class="form-style-1">
-					<li><label>Name:<span class="required">*</span></label> <select
-						name="field4" class="field-select">
-							<option value="Akshay">Akshay</option>
-							<option value="Latha">Latha</option>
-							<option value="Likith">Likith</option>
-							<option value="Madhurya">Madhurya</option>
-							<option value="Mohan">Mohan</option>
-							<option value="Pooja">Pooja</option>
-							<option value="Pradeep">Pradeep</option>
-							<option value="Sushma">Sushma</option>
-							<option value="Venki">Venki</option>
-					</select></li>
-					<li><label>Amount:<span class="required">*</span></label> <input
-						type="text" name="field1" class="field-divided"
-						placeholder="Amount" />&nbsp;</li>
-					<li><label>Reason:</label> <input type="text" name="field2"
-						class="field-divided" placeholder="Why Amount Is Spent..." />&nbsp;
-					</li>
-				</ul>
-			</form>
+	<div>
+		<h1 align="center">Group Amount Calculator</h1>
+		<div align="right">
+			<button id="details">Details</button>
+	    </div>
+		<div id="outerDiv">
+			<div id="formDiv_1">
+				<form id="form_1">
+					<ul class="form-style-1">
+						<li><label>Name:<span class="required">*</span></label> <select
+							name="field4" class="field-select">
+								<option value="Akshay">Akshay</option>
+								<option value="Latha">Latha</option>
+								<option value="Likith">Likith</option>
+								<option value="Madhurya">Madhurya</option>
+								<option value="Mohan">Mohan</option>
+								<option value="Pooja">Pooja</option>
+								<option value="Pradeep">Pradeep</option>
+								<option value="Sushma">Sushma</option>
+								<option value="Venki">Venki</option>
+						</select></li>
+						<li><label>Amount:<span class="required">*</span></label> <input
+							type="text" name="field1" class="field-divided"
+							placeholder="Amount" />&nbsp;</li>
+						<li><label>Reason:</label> <input type="text" name="field2"
+							class="field-divided" placeholder="Why Amount Is Spent..." />&nbsp;
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+		<div align="center">
+			<button id="finalSubmit">Submit</button>
+			<button id="haveMore">Have More</button>
+		</div>
+	   <div>
+		  <div id="showDetails" style="float: right;">
+			<h1>Amount Paid List:</h1>
+			<div id="amountList"></div>
+		  </div>
+		  <div id="finalDetails" style="float: left;">
+		     <h1>Amount Refund Details:</h1>
+			 <div id="finalDetailList">
+			 </div>
+		  </div>
 		</div>
 	</div>
-	<button>Submit</button>
-	<button id="haveMore">Have More</button>
 </body>
 
 </html>
