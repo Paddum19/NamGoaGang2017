@@ -5,6 +5,12 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style type="text/css">
+body {
+	color: #247BA0;
+	background-color: #FDFFFC;
+	overflow:auto;
+}
+
 .form-style-1 {
 	margin: 10px auto;
 	max-width: 400px;
@@ -43,10 +49,7 @@
 	-o-transition: all 0.30s ease-in-out;
 	outline: none;
 }
-body {
-    width:100%;        
-    min-width:980px;
-}
+
 .form-style-1 input[type=text]:focus, .form-style-1 input[type=date]:focus,
 	.form-style-1 input[type=datetime]:focus, .form-style-1 input[type=number]:focus,
 	.form-style-1 input[type=search]:focus, .form-style-1 input[type=time]:focus,
@@ -111,57 +114,94 @@ h3 {
 	padding: 0px;
 	margin: 0px;
 }
-	
+
+h1 {
+	font-family: "Times New Roman", Times, serif;
+}
+
+.buttonAll {
+	background-color: #247BA0; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+}
+
+.buttonAll:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0
+		rgba(0, 0, 0, 0.19);
+}
+.fullBody{
+overflow: auto;
+}
+.showDetails{
+background-color: #0000000;
+}
 </style>
 <script type="text/javascript" src="myscripts.js"></script>
 </head>
 <body>
-	<div>
-		<h1 align="center">Group Amount Calculator</h1>
-		<div align="right">
-			<button id="details">Details</button>
-	    </div>
-		<div id="outerDiv" class="overlay">
-			<div id="formDiv_1">
-				<form id="form_1">
-					<ul class="form-style-1">
-						<li><label>Name:<span class="required">*</span></label> <select
-							name="field4" class="field-select">
-								<option value="Akshay">Akshay</option>
-								<option value="Latha">Latha</option>
-								<option value="Likith">Likith</option>
-								<option value="Madhurya">Madhurya</option>
-								<option value="Mohan">Mohan</option>
-								<option value="Pooja">Pooja</option>
-								<option value="Pradeep">Pradeep</option>
-								<option value="Sushma">Sushma</option>
-								<option value="Venki">Venki</option>
-						</select></li>
-						<li><label>Amount:<span class="required">*</span></label> <input
-							type="text" name="field1" class="field-divided"
-							placeholder="Amount" />&nbsp;</li>
-						<li><label>Reason:</label> <input type="text" name="field2"
-							class="field-divided" placeholder="Why Amount Is Spent..." />&nbsp;
-						</li>
-					</ul>
-				</form>
+	<div class="fullBody">
+		<h1 align="center">
+			<u>Group Amount Calculator</u>
+		</h1>
+		<div id="division1">
+			<div id="outerDiv">
+				<div id="formDiv_1">
+					<form id="form_1">
+						<ul class="form-style-1">
+							<li><label>Name:<span class="required">*</span></label> <select
+								name="field4" class="field-select">
+									<option value="Akshay">Akshay</option>
+									<option value="Latha">Latha</option>
+									<option value="Likith">Likith</option>
+									<option value="Madhurya">Madhurya</option>
+									<option value="Mohan">Mohan</option>
+									<option value="Pooja">Pooja</option>
+									<option value="Pradeep">Pradeep</option>
+									<option value="Sushma">Sushma</option>
+									<option value="Venki">Venki</option>
+							</select></li>
+							<li><label>Amount:<span class="required">*</span></label> <input
+								type="text" name="field1" class="field-divided"
+								placeholder="Amount" />&nbsp;</li>
+							<li><label>Reason:</label> <input type="text" name="field2"
+								class="field-divided" placeholder="Why Amount Is Spent..." />&nbsp;
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			<div align="center">
+				<button id="finalSubmit" class="buttonAll">Submit</button>
+				<button id="haveMore" class="buttonAll">Have More</button>
 			</div>
 		</div>
-		<div align="center">
-			<button id="finalSubmit">Submit</button>
-			<button id="haveMore">Have More</button>
-		</div>
-	   <div>
-		  <div id="showDetails" style="float: right;">
+
+		<div id="showDetails" align="center" class="showDetails">
 			<h1>Amount Paid List:</h1>
 			<div id="amountList"></div>
-		  </div>
-		  <div id="finalDetails" style="float: left;">
-		     <h1>Amount Refund Details:</h1>
-			 <div id="finalDetailList">
-			 </div>
-		  </div>
+			<div align="center">
+				<button id="amountSummary" class="buttonAll">Amount Summary</button>
+				<button id="reload1" class="buttonAll">Enter Details Again</button>
+			</div>
 		</div>
+		<div id="finalDetails" align="center">
+			<h1>Amount Refund Details:</h1>
+			<div id="finalDetailList"></div>
+			<div align="center">
+				<button id="details" class="buttonAll">Details</button>
+				<button id="reload2" class="buttonAll">Enter Details Again</button>
+			</div>
+		</div>
+
 	</div>
 </body>
 
