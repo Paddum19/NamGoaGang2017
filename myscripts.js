@@ -80,13 +80,15 @@ $(document).ready(function(){
 		perHeadAmount=Math.round(parseFloat(totalAmount/perHeadAmount));
 		for (var i in nameAmountMap) {
 			if(Math.round(parseFloat(nameAmountMap[i]))>perHeadAmount){
-				finalAmountHtml=finalAmountHtml+"<font color=\"green\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" should get back Rs "+(nameAmountMap[i]-perHeadAmount)+"!!</strong></font><br>";
+				finalAmountHtml=finalAmountHtml+"<font color=\"green\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" have paid "+nameAmountMap[i]+" and should get back Rs "+(nameAmountMap[i]-perHeadAmount)+"!!</strong></font><br>";
 			}else if(Math.round(parseFloat(nameAmountMap[i]))<perHeadAmount){
-				finalAmountHtml=finalAmountHtml+"<font color=\"red\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" should pay Rs "+(perHeadAmount-nameAmountMap[i])+" more!!</strong></font><br>";
+				finalAmountHtml=finalAmountHtml+"<font color=\"red\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" have paid "+nameAmountMap[i]+" and should pay Rs "+(perHeadAmount-nameAmountMap[i])+" more!!</strong></font><br>";
 			}else{
-				finalAmountHtml=finalAmountHtml+"<font color=\"yellow\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" have paid full amount!!</strong></font><br>";
+				finalAmountHtml=finalAmountHtml+"<font color=\"yellow\" style=\"font-family:Courier New;\" size=\"6\" class=\"redFont\"><strong>"+i+" have paid "+nameAmountMap[i]+" and that is enough!!</strong></font><br>";
 			}
 		} 
+		document.getElementById('totAmountDetail2').innerHTML="Total Amount:-"+totalAmount+"   |   Total Person:-"+Object.keys(nameAmountMap).length+"   |   Per Head:-"+perHeadAmount;
+		document.getElementById('totAmountDetail1').innerHTML="Total Amount:-"+totalAmount+"   |   Total Person:-"+Object.keys(nameAmountMap).length+"   |   Per Head:-"+perHeadAmount;
 		$('#finalDetailList').append(finalAmountHtml); 
 		$("#division1").hide();
 		$("#finalDetails").show();
