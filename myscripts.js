@@ -73,7 +73,13 @@ $(document).ready(function(){
 		amount=x.elements[1].value;
 		reason=x.elements[2].value;
 		status=validate(name,amount);
-
+            if (status==1) {
+			document.getElementById('warningOne'+count).innerHTML='(please select a name)';
+		} else if (status==2) {
+			document.getElementById('warningTwo'+count).innerHTML='(amount cannot be blank)';
+		}else if(status==3){
+			document.getElementById('warningTwo'+count).innerHTML='(amount should be a number)';
+		}else{
 
 		addingToMap(name,amount,reason);
 		perHeadAmount=Object.keys(nameAmountMap).length;
@@ -92,6 +98,8 @@ $(document).ready(function(){
 		$('#finalDetailList').append(finalAmountHtml); 
 		$("#division1").hide();
 		$("#finalDetails").show();
+			}
+			
 	});
 
 	function addingToMap(name,amount,reason){
